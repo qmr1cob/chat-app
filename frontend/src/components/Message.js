@@ -3,15 +3,6 @@ import styles from '../styles/Message.module.css';
 import ReactMarkdown from 'react-markdown';
 
 export default function Message({ sender, text, type, theme }) {
-  useEffect(() => {
-    if (sender === 'Bot') {
-      // Speak the bot's response
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      window.speechSynthesis.speak(utterance);
-    }
-  }, [sender, text]);
-
   const renderContent = () => {
     switch (type) {
       case 'code':
