@@ -1,0 +1,50 @@
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.light {
+  background: rgba(255, 255, 255, 0.95);
+  color: #212529;
+}
+
+.dark {
+  background: rgba(33, 37, 41, 0.95);
+  color: #f8f9fa;
+}
+
+.chatBox {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.typingIndicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  gap: 4px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #6c757d;
+  animation: bounce 1.4s infinite ease-in-out;
+}
+
+.dot:nth-child(1) { animation-delay: -0.32s; }
+.dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
