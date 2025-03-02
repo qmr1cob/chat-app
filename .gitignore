@@ -1,0 +1,52 @@
+# Node.js (Frontend)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Next.js specific
+/.next
+/out
+
+# Build directories
+/build/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Next.js TypeScript/JavaScript artifacts
+*.tsbuildinfo
+
+# npm package lock
+package-lock.json
+yarn.lock
+
+# Public directory build (next.js can create this on export)
+/.next/
+out/
+
+# Test files
+*.test.js
+*.test.ts
+
+# Temporary files
+*.bak
+*.orig
