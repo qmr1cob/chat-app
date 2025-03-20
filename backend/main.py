@@ -49,17 +49,35 @@ async def upload_csv(file: UploadFile = File(...)):
         logging.debug(f"CSV file content: {csv_data}")
 
         # Create a more detailed analysis prompt
-        analysis_prompt = f"""Analyze this CSV data and provide insights:
+        analysis_prompt = f"""
+Analyze the following CSV data and provide meaningful insights:
 
 {csv_data}
 
-Please provide:
-1. Basic statistics (number of rows, columns)
-2. Data structure analysis
-3. Key patterns or insights
-4. Any potential data quality issues
+### Required Analysis:
+1. **Basic Overview**:  
+   - Total number of rows and columns  
+   - Summary of column names and data types  
 
-Format the response in a clear, readable way."""
+2. **Statistical Summary**:  
+   - Key descriptive statistics (mean, median, min, max, standard deviation) for numerical columns  
+   - Distribution of categorical values (top categories, frequencies)  
+
+3. **Data Quality Assessment**:  
+   - Missing values (columns with the most missing data, percentage missing)  
+   - Duplicates or inconsistencies in the dataset  
+
+4. **Key Patterns & Insights**:  
+   - Any significant trends, correlations, or anomalies  
+   - Notable outliers in numerical data  
+   - Potential relationships between variables  
+
+### Output Format:
+- Structure the response in a well-formatted, readable manner.
+- Where applicable, use bullet points or tables for clarity.
+- Highlight key findings and suggest possible next steps if necessary.
+"""
+
         
         # Use the ollama_client with the detailed prompt
         response = chat_with_ollama(analysis_prompt)

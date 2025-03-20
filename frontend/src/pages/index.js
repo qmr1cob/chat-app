@@ -23,8 +23,10 @@ export default function Home() {
         <ChatBox theme={theme} />
       </main>
       <footer className={styles.footer}>
-        <p>© 2024 AI Chat Assistant. All rights reserved.</p>
-      </footer>
+  <p>© 2025 AI Chat Assistant. All rights reserved.</p>
+  <p>Built by saranish</p>
+</footer>
+
     </div>
   );
 }
